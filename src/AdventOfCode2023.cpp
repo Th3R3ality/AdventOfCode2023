@@ -6,9 +6,10 @@
 
 int main()
 {
-    std::cout << "Hello World!\n";
+    std::cout << "Advent Of Code!\n";
 
     //Day2();
+    Day3();
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu

@@ -14,9 +14,11 @@ bool verifyRules2(int count, char id);
 constexpr int LINE_MAX_LENGTH = 256;
 
 void Day2() {
-	auto input = std::ifstream("src\\input\\Day2.txt");
+	std::cout << "DAY 2 d-_-b" << std::endl;
 
 	int answer1 = 0, answer2 = 0;
+
+	auto input = std::ifstream("src\\input\\Day2.txt");
 
 	char line[LINE_MAX_LENGTH];
 	while (!input.eof()) {

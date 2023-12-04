@@ -90,6 +90,7 @@
   <ItemGroup>
     <ClCompile Include="src\AdventOfCode2023.cpp" />
     <ClCompile Include="src\Day2.cpp" />
+    <ClCompile Include="src\Day3.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Pch.h" />
@@ -97,6 +98,7 @@
   </ItemGroup>
   <ItemGroup>
     <Text Include="src\Input\Day2.txt" />
+    <Text Include="src\Input\Day3.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
