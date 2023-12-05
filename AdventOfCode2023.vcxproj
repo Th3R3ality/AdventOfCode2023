@@ -89,6 +89,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="src\AdventOfCode2023.cpp" />
+    <ClCompile Include="src\Day1.cpp" />
     <ClCompile Include="src\Day2.cpp" />
     <ClCompile Include="src\Day3.cpp" />
   </ItemGroup>
@@ -97,8 +98,9 @@
     <ClInclude Include="src\Puzzles.h" />
   </ItemGroup>
   <ItemGroup>
-    <Text Include="src\Input\Day2.txt" />
-    <Text Include="src\Input\Day3.txt" />
+    <Text Include="src\input\Day1.txt" />
+    <Text Include="src\input\Day2.txt" />
+    <Text Include="src\input\Day3.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

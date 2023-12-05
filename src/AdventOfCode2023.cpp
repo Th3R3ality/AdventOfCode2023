@@ -8,8 +8,9 @@ int main()
 {
     std::cout << "Advent Of Code!\n";
 
+    Day1();
     //Day2();
-    Day3();
+    //Day3();
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu

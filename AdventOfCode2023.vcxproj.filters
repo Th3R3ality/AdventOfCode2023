@@ -24,6 +24,9 @@
     <ClCompile Include="src\Day3.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="src\Day1.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Puzzles.h">
@@ -34,7 +37,8 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <Text Include="src\Input\Day2.txt" />
-    <Text Include="src\Input\Day3.txt" />
+    <Text Include="src\input\Day2.txt" />
+    <Text Include="src\input\Day3.txt" />
+    <Text Include="src\input\Day1.txt" />
   </ItemGroup>
 </Project>
