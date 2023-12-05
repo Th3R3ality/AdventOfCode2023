@@ -32,10 +32,10 @@ void Day3() {
 	}
 	
 
-	//int answer1 = part1(input);
+	int answer1 = part1(input);
 	int answer2 = part2(input);
 
-	//std::cout << "Answer for part 1: " << answer1 << std::endl;
+	std::cout << "Answer for part 1: " << answer1 << std::endl;
 	std::cout << "Answer for part 2: " << answer2 << std::endl;
 }
 
@@ -86,12 +86,6 @@ int part1(std::vector<std::string> input) {
 }
 
 int part2(std::vector<std::string> input) {
-
-	//input = {
-	//	"5*.......",
-	//	"..5...*10",
-	//	".......10"
-	//};
 
 	int answer = 0;
 	for (int y = 0; y < input.size(); y++) {
