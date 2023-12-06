@@ -34,8 +34,9 @@ void Day1()
     }
     std::cout << " : " << a << b;
     answer1 += (a * 10) + b;
-    a = 0; b = 0;
 
+
+    a = 0; b = 0;
     constexpr const char* spellings[] = { "one", "two", "three", "four", "five", "six", "seven", "eight", "nine" };
 
     input.close();
