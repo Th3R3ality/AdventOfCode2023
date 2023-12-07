@@ -4,7 +4,7 @@
 void part1(std::vector<std::string>  input);
 void part2(std::vector<std::string>  input);
 
-std::vector<int> GetWinningNumbers(std::string line, int& index);
+std::vector<int> GatherWinningNumbers(std::string line, int& index);
 bool GetNextNumber(std::string line, int& index, int& num);
 bool IsWinningNumber(std::vector<int> winningNumbers, int num);
 int FindSymbol(std::string line, char symbol);
@@ -14,7 +14,8 @@ void Day4() {
 
 	std::vector<std::string> input = LoadInput("src\\input\\Day4.txt");
 
-	part1(input);
+	//part1(input);
+	part2(input);
 }
 
 void part1(std::vector<std::string> input) {
@@ -30,7 +31,7 @@ void part1(std::vector<std::string> input) {
 
 		std::cout << "GameId: " << skipGameId << std::endl;
 
-		auto winningNumbers = GetWinningNumbers(line, index);
+		auto winningNumbers = GatherWinningNumbers(line, index);
 
 		while (index < line.length()) {
 			int num = 0;
@@ -53,7 +54,48 @@ void part1(std::vector<std::string> input) {
 	std::cout << "Part 1 answer: " << answer << std::endl;
 }
 
-std::vector<int> GetWinningNumbers(std::string line, int& index) {
+void part2(std::vector<std::string>  input) {
+	int answer = 0;
+
+	std::vector<int> cardCounts;
+
+	for (auto& line : input) {
+		std::cout << line << std::endl;
+
+		int gameValue = 0;
+		int gameId;
+		int index = 0;
+
+		GetNextNumber(line, index, gameId);
+		if (cardCounts.size() < gameId) {
+			cardCounts.resize(gameId);
+		}
+		cardCounts[gameId-1] += 1;
+
+		auto winningNumbers = GatherWinningNumbers(line, index);
+
+		while (index < line.length()) {
+			int num = 0;
+			if (!GetNextNumber(line, index, num)) {
+				continue;
+			}
+			if (IsWinningNumber(winningNumbers, num)) {
+				gameValue++;
+			}
+		}
+		if (cardCounts.size() < gameId+gameValue) {
+			cardCounts.resize(gameId+gameValue);
+		}
+		for (int i = 1; i <= gameValue; i++) {
+			cardCounts[i + gameId-1] += 1 * cardCounts[gameId-1];
+		}
+		answer += cardCounts[gameId-1];
+	}
+
+	std::cout << "Part 2 answer: " << answer << std::endl;
+}
+
+std::vector<int> GatherWinningNumbers(std::string line, int& index) {
 	int oldIndex = 0;
 	int num = 0;
 	int separatorIndex = FindSymbol(line, '|') + 1;
@@ -64,7 +106,7 @@ std::vector<int> GetWinningNumbers(std::string line, int& index) {
 		if (GetNextNumber(line, index, num)) {
 			if (separatorIndex > index) {
 				winningNumbers.push_back(num);
-				std::cout << "found winning number: " << num << std::endl;
+				//std::cout << "found winning number: " << num << std::endl;
 			}
 		}
 
